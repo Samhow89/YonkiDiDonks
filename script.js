@@ -19,7 +19,7 @@ function convertYonks() {
     document.getElementById('funFact').innerText = randomFact;
 
     createRain();
-    playMusic();
+    playVideo();
 }
 
 function createRain() {
@@ -43,7 +43,8 @@ function createRain() {
     }
 }
 
-function playMusic() {
-    const audio = document.getElementById('backgroundMusic');
-    audio.play();
+function playVideo() {
+    const iframe = document.getElementById('backgroundVideo');
+    const src = iframe.src;
+    iframe.src = src; // Reload the iframe to ensure autoplay works
 }
