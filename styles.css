@@ -6,6 +6,7 @@ body {
     background-size: cover;
     color: white;
     text-align: center;
+    overflow: hidden;
 }
 
 .container {
@@ -69,4 +70,29 @@ button:hover {
 
 p {
     font-size: 1.5em;
+}
+
+#rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.yonk, .donk {
+    position: absolute;
+    top: -50px;
+    font-size: 2em;
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 100vh;
+    }
 }
