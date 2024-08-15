@@ -31,6 +31,13 @@ h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
     color: #ff6347;
+    animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+    0% { color: #ff6347; }
+    50% { color: #ff4500; }
+    100% { color: #ff6347; }
 }
 
 input {
@@ -39,6 +46,12 @@ input {
     border-radius: 5px;
     border: none;
     margin-bottom: 1em;
+    animation: inputGlow 2s infinite;
+}
+
+@keyframes inputGlow {
+    0%, 100% { box-shadow: 0 0 10px #ff6347; }
+    50% { box-shadow: 0 0 20px #ff4500; }
 }
 
 button {

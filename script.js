@@ -19,6 +19,7 @@ function convertYonks() {
     document.getElementById('funFact').innerText = randomFact;
 
     createRain();
+    playMusic();
 }
 
 function createRain() {
@@ -40,4 +41,9 @@ function createRain() {
         donk.style.animationDuration = `${Math.random() * 2 + 3}s`;
         rainContainer.appendChild(donk);
     }
+}
+
+function playMusic() {
+    const audio = document.getElementById('backgroundMusic');
+    audio.play();
 }
