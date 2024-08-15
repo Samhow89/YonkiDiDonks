@@ -140,38 +140,36 @@ p {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.7;
+    filter: blur(10px);
     animation: move 5s linear infinite;
 }
 
 .headlight.red {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.7);
     animation-delay: 0s;
 }
 
 .headlight.blue {
-    background-color: blue;
+    background-color: rgba(0, 0, 255, 0.7);
     animation-delay: 1s;
 }
 
 .headlight.green {
-    background-color: green;
+    background-color: rgba(0, 255, 0, 0.7);
     animation-delay: 2s;
 }
 
 .headlight.yellow {
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.7);
     animation-delay: 3s;
 }
 
 @keyframes move {
     0% {
-        transform: translateX(-100px) translateY(0);
-    }
-    50% {
-        transform: translateX(calc(100vw - 100px)) translateY(calc(100vh - 100px));
+        transform: translate(calc(100vw * var(--start-x)), calc(100vh * var(--start-y)));
     }
     100% {
-        transform: translateX(-100px) translateY(0);
+        transform: translate(calc(100vw * var(--end-x)), calc(100vh * var(--end-y)));
     }
 }

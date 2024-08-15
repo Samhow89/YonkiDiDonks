@@ -20,6 +20,7 @@ function convertYonks() {
 
     createRain();
     playVideo();
+    moveHeadlights();
 }
 
 function createRain() {
@@ -47,4 +48,14 @@ function playVideo() {
     const iframe = document.getElementById('backgroundVideo');
     const src = iframe.src;
     iframe.src = src; // Reload the iframe to ensure autoplay works
+}
+
+function moveHeadlights() {
+    const headlights = document.querySelectorAll('.headlight');
+    headlights.forEach(headlight => {
+        headlight.style.setProperty('--start-x', Math.random());
+        headlight.style.setProperty('--start-y', Math.random());
+        headlight.style.setProperty('--end-x', Math.random());
+        headlight.style.setProperty('--end-y', Math.random());
+    });
 }
