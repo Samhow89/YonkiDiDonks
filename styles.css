@@ -16,6 +16,8 @@ body {
     display: inline-block;
     margin-top: 20%;
     animation: bounce 2s infinite;
+    z-index: 10;
+    position: relative;
 }
 
 @keyframes bounce {
@@ -92,6 +94,7 @@ p {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    z-index: 5;
 }
 
 .yonk, .donk {
@@ -107,6 +110,35 @@ p {
     }
     100% {
         top: 100vh;
+    }
+}
+
+#cloud-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.cloud {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background: url('https://www.pikpng.com/pngl/b/348-3485000_cloud1-cloud-png-deviantart-clipart.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.8;
+    animation: float 10s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(100vw);
     }
 }
 
@@ -133,16 +165,18 @@ p {
     height: 100%;
     pointer-events: none;
     overflow: hidden;
+    display: none;
+    z-index: 7;
 }
 
 .headlight {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     border-radius: 50%;
     opacity: 0.7;
-    filter: blur(20px);
-    animation: move 3s linear infinite;
+    filter: blur(30px);
+    animation: move 2s linear infinite;
 }
 
 .headlight.red {
@@ -172,4 +206,86 @@ p {
     100% {
         transform: translate(calc(100vw * var(--end-x)), calc(100vh * var(--end-y)));
     }
+}
+
+#gif-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 8;
+}
+
+.flying-gif {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    animation: fly 5s linear infinite;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(100vw, 100vh) rotate(360deg);
+    }
+}
+
+@keyframes colorChange {
+    0% { background-color: #6647ff; }
+    50% { background-color: #ff4500; }
+    100% { background-color: #00ff88; }
+}
+
+.random-text {
+    position: absolute;
+    font-size: 2em;
+    color: yellow;
+    animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes flashBorder {
+    0%, 100% { border-color: #ff6347; }
+    50% { border-color: #ff4500; }
+}
+
+.emoji-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.emoji {
+    position: absolute;
+    font-size: 3em;
+    animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.flying-gif {
+    position: absolute;
+    width: 50px;
+    height: 50px
 }
