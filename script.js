@@ -1,137 +1,177 @@
 function convertYonks() {
     const yonks = document.getElementById('yonksInput').value;
-    const totalSeconds = yonks * (92 * 24 * 60 * 60 + 43 * 60 + 69); // 1 Yonki Di Donk = 92 days, 43 minutes, 69 seconds
-    const days = Math.floor(totalSeconds / (24 * 60 * 60));
-    const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
-    const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
-    const seconds = totalSeconds % 60;
+    if (!yonks) {
+        alert("Don't be shy, enter those Yonks!");
+        return;
+    }
+    
+    const realTime = yonks * 42; // Because 42 is always the answer!
+    document.getElementById('result').innerHTML = `${yonks} Yonki Di Donks is approximately ${realTime} minutes of your precious time!`;
 
-    const funFacts = [
-        "Did you know? A group of flamingos is called a 'flamboyance'!",
-        "Fun fact: Honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible!",
-        "Random trivia: Bananas are berries, but strawberries aren't!",
-        "Here's a laugh: Why don't scientists trust atoms? Because they make up everything!"
-    ];
-
-    const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
-
-    document.getElementById('result').innerText = `${yonks} Yonki Di Donks is approximately ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds.`;
-    document.getElementById('funFact').innerText = randomFact;
-
-    createRain();
-    createClouds();
-    playVideo();
-    moveHeadlights();
-    showGifs();
-    triggerCrazyEffects();
+    displayRandomFacts();
+    triggerRandomEffects();
 }
 
-function createRain() {
+function displayRandomFacts() {
+    const facts = [
+        "Did you know? The Yonk-iverse is expanding!",
+        "Fun Fact: Yonki Di Donks are the preferred currency on Planet Zog!",
+        "Breaking News: Yonki Di Donks have surpassed Bitcoin in value!",
+        "Whoa! You've just entered the Yonki Di Donks Hall of Fame!",
+        "Hold on tight! Yonki Di Donks are going galactic!",
+        "Alert! Yonki Di Donks can be used as fuel for your intergalactic spaceship!",
+        "Fun Fact: Yonki Di Donks were found in the last box of cereal in the multiverse!",
+        "Breaking News: Yonki Di Donks are now the official time unit in Narnia!",
+        "Holy Smokes! Yonki Di Donks just won an Oscar for Best Comedy!",
+        "Did you know? Yonki Di Donks are the secret ingredient in Grandma’s famous cookies!"
+    ];
+    const randomFact = facts[Math.floor(Math.random() * facts.length)];
+    document.getElementById('funFact').innerHTML = randomFact;
+}
+
+function triggerRandomEffects() {
+    rainYonksAndDonks();
+    animateClouds();
+    activateHeadlights();
+    releaseGifs();
+    startDanceParty();
+    launchFireworks();
+    playLaughTrack();
+    unleashPartyAnimal();
+    explodeYonks();
+    floatBalloons();
+    releaseConfetti();
+}
+
+function rainYonksAndDonks() {
     const rainContainer = document.getElementById('rain-container');
     rainContainer.innerHTML = '';
 
     for (let i = 0; i < 50; i++) {
-        const yonk = document.createElement('div');
-        yonk.className = 'yonk';
-        yonk.innerText = 'Yonk!';
-        yonk.style.left = `${Math.random() * 100}vw`;
-        yonk.style.animationDuration = `${Math.random() * 2 + 3}s`;
-        rainContainer.appendChild(yonk);
-
-        const donk = document.createElement('div');
-        donk.className = 'donk';
-        donk.innerText = 'Donk!';
-        donk.style.left = `${Math.random() * 100}vw`;
-        donk.style.animationDuration = `${Math.random() * 2 + 3}s`;
-        rainContainer.appendChild(donk);
+        const yonkDonk = document.createElement('div');
+        yonkDonk.className = Math.random() < 0.5 ? 'yonk' : 'donk';
+        yonkDonk.innerText = Math.random() < 0.5 ? 'Yonk' : 'Donk';
+        yonkDonk.style.left = Math.random() * 100 + 'vw';
+        yonkDonk.style.animationDuration = 3 + Math.random() * 5 + 's';
+        yonkDonk.style.fontSize = (1.5 + Math.random() * 2) + 'em';
+        rainContainer.appendChild(yonkDonk);
     }
 }
 
-function createClouds() {
+function animateClouds() {
     const cloudContainer = document.getElementById('cloud-container');
     cloudContainer.innerHTML = '';
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
         const cloud = document.createElement('div');
         cloud.className = 'cloud';
-        cloud.style.left = `${Math.random() * 100}vw`;
-        cloud.style.top = `${Math.random() * 20}vh`;
+        cloud.style.top = Math.random() * 50 + 'vh';
+        cloud.style.left = -150 - Math.random() * 150 + 'px';
+        cloud.style.animationDuration = 10 + Math.random() * 10 + 's';
         cloudContainer.appendChild(cloud);
     }
 }
 
-function playVideo() {
-    const iframe = document.getElementById('backgroundVideo');
-    const src = iframe.src;
-    iframe.src = src; // Reload the iframe to ensure autoplay works
-}
-
-function moveHeadlights() {
+function activateHeadlights() {
     const headlights = document.querySelector('.headlights');
     headlights.style.display = 'block';
-    const headlightElements = document.querySelectorAll('.headlight');
-    headlightElements.forEach(headlight => {
-        headlight.style.setProperty('--start-x', Math.random());
-        headlight.style.setProperty('--start-y', Math.random());
-        headlight.style.setProperty('--end-x', Math.random());
-        headlight.style.setProperty('--end-y', Math.random());
+
+    document.querySelectorAll('.headlight').forEach(light => {
+        light.style.setProperty('--start-x', Math.random());
+        light.style.setProperty('--start-y', Math.random());
+        light.style.setProperty('--end-x', Math.random());
+        light.style.setProperty('--end-y', Math.random());
     });
+
+    setTimeout(() => headlights.style.display = 'none', 5000);
 }
 
-function showGifs() {
+function releaseGifs() {
     const gifContainer = document.getElementById('gif-container');
     gifContainer.innerHTML = '';
 
-    const gifs = [
-        'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
-        'https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif',
-        'https://media.giphy.com/media/l0HlBO7eyXzSZkJri/giphy.gif',
-        'https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif'
-    ];
-
-    for (let i = 0; i < 20; i++) {
-        const gif = document.createElement('img');
-        gif.src = gifs[Math.floor(Math.random() * gifs.length)];
+    for (let i = 0; i < 10; i++) {
+        const gif = document.createElement('div');
         gif.className = 'flying-gif';
-        gif.style.left = `${Math.random() * 100}vw`;
-        gif.style.top = `${Math.random() * 100}vh`;
-        gif.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        gif.style.top = Math.random() * 100 + 'vh';
+        gif.style.left = Math.random() * 100 + 'vw';
+        gif.style.animationDuration = 4 + Math.random() * 2 + 's';
         gifContainer.appendChild(gif);
     }
 }
 
-function triggerCrazyEffects() {
-    // Effect 1: Background color change
-    document.body.style.animation = 'colorChange 5s infinite';
+function startDanceParty() {
+    const danceParty = document.getElementById('dance-party');
+    danceParty.innerHTML = '';
 
-    // Effect 2: Random text appearing
-    const randomText = document.createElement('div');
-    randomText.className = 'random-text';
-    randomText.innerText = 'Wow! So many Yonki Di Donks!';
-    randomText.style.left = `${Math.random() * 100}vw`;
-    randomText.style.top = `${Math.random() * 100}vh`;
-    document.body.appendChild(randomText);
+    for (let i = 0; i < 5; i++) {
+        const dancer = document.createElement('div');
+        dancer.className = 'dancer';
+        danceParty.appendChild(dancer);
+    }
 
-    // Effect 3: Spinning container
-    const container = document.querySelector('.container');
-    container.style.animation = 'spin 5s infinite';
+    danceParty.style.display = 'block';
 
-    // Effect 4: Flashing border
-    container.style.border = '5px solid';
-    container.style.animation = 'flashBorder 1s infinite';
+    setTimeout(() => danceParty.style.display = 'none', 5000);
+}
 
-    // Effect 5: Random emojis
-    const emojiContainer = document.createElement('div');
-    emojiContainer.className = 'emoji-container';
-    document.body.appendChild(emojiContainer);
+function launchFireworks() {
+    const fireworksContainer = document.getElementById('fireworks');
+    fireworksContainer.innerHTML = '';
 
-    const emojis = ['😂', '🤣', '😜', '🤪', '🎉'];
+    for (let i = 0; i < 20; i++) {
+        const firework = document.createElement('div');
+        firework.className = 'firework';
+        firework.style.left = Math.random() * 100 + 'vw';
+        firework.style.top = Math.random() * 100 + 'vh';
+        firework.style.animationDelay = Math.random() * 1.5 + 's';
+        fireworksContainer.appendChild(firework);
+    }
+}
+
+function playLaughTrack() {
+    const laughTrack = document.getElementById('laugh-track');
+    laughTrack.play();
+}
+
+function unleashPartyAnimal() {
+    const partyAnimal = document.getElementById('party-animal');
+    partyAnimal.style.display = 'block';
+
+    setTimeout(() => partyAnimal.style.display = 'none', 5000);
+}
+
+function explodeYonks() {
+    const yonkContainer = document.getElementById('exploding-yonks');
+    yonkContainer.innerHTML = '';
+
     for (let i = 0; i < 10; i++) {
-        const emoji = document.createElement('div');
-        emoji.className = 'emoji';
-        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-        emoji.style.left = `${Math.random() * 100}vw`;
-        emoji.style.top = `${Math.random() * 100}vh`;
-        emojiContainer.appendChild(emoji);
+        const yonk = document.createElement('div');
+        yonk.className = 'exploding-yonk';
+        yonk.style.left = Math.random() * 100 + 'vw';
+        yonk.style.top = Math.random() * 100 + 'vh';
+        yonk.style.animationDuration = 2 + Math.random() * 3 + 's';
+        yonkContainer.appendChild(yonk);
+    }
+}
+
+function floatBalloons() {
+    const balloonContainer = document.getElementById('balloon-container');
+    balloonContainer.style.display = 'block';
+
+    setTimeout(() => balloonContainer.style.display = 'none', 5000);
+}
+
+function releaseConfetti() {
+    const confettiContainer = document.getElementById('confetti');
+    confettiContainer.innerHTML = '';
+
+    for (let i = 0; i < 100; i++) {
+        const confettiPiece = document.createElement('div');
+        confettiPiece.className = 'confetti-piece';
+        confettiPiece.style.left = Math.random() * 100 + 'vw';
+        confettiPiece.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confettiPiece.style.animationDuration = 3 + Math.random() * 3 + 's';
+        confettiContainer.appendChild(confettiPiece);
     }
 }
