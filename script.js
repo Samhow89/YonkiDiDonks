@@ -74,7 +74,7 @@ function activateHeadlights() {
         light.style.setProperty('--end-y', Math.random());
     });
 
-    setTimeout(() => headlights.style.display = 'none', 5000);
+    setTimeout(() => headlights.style.display = 'none', 500000);
 }
 
 function releaseGifs() {
@@ -102,7 +102,7 @@ function startDanceParty() {
     }
 
     danceParty.style.display = 'block';
-    setTimeout(() => danceParty.style.display = 'none', 5000);
+    setTimeout(() => danceParty.style.display = 'none', 50000);
 }
 
 function launchFireworks() {
@@ -118,7 +118,7 @@ function launchFireworks() {
         fireworkContainer.appendChild(firework);
     }
 
-    setTimeout(() => fireworkContainer.innerHTML = '', 3000);
+    setTimeout(() => fireworkContainer.innerHTML = '', 300000);
 }
 
 function playLaughTrack() {
