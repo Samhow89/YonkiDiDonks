@@ -5,7 +5,7 @@ function convertYonks() {
         return;
     }
     
-    const realTime = yonks * 42; // Because 42 is always the answer!
+    const realTime = yonks * 432; // Because 42 is always the answer!
     document.getElementById('result').innerHTML = `${yonks} Yonki Di Donks is approximately ${realTime} minutes of your precious time!`;
 
     displayRandomFacts();
@@ -38,6 +38,7 @@ function rainYonksAndDonks() {
     const rainContainer = document.getElementById('rain-container');
     rainContainer.innerHTML = '';
 
+    
     for (let i = 0; i < 50; i++) {
         const yonkDonk = document.createElement('div');
         yonkDonk.className = Math.random() < 0.5 ? 'yonk' : 'donk';
@@ -47,6 +48,7 @@ function rainYonksAndDonks() {
         yonkDonk.style.fontSize = (1.5 + Math.random() * 2) + 'em';
         rainContainer.appendChild(yonkDonk);
     }
+   
 }
 
 function animateClouds() {
@@ -124,4 +126,48 @@ function launchFireworks() {
 function playLaughTrack() {
     const laughTrack = document.getElementById('laugh-track');
     laughTrack.play();
+}
+
+let conversionCount = 0;
+const maxConversions = Math.floor(Math.random() * (10 - 3 + 1)) + 3; // Random number between 3 and 10
+
+function convertYonks() {
+    const yonks = document.getElementById('yonksInput').value;
+    if (!yonks) {
+        alert("Don't be shy, enter those Yonks!");
+        return;
+    }
+    
+    const realTime = yonks * 42; // Because 42 is always the answer!
+    document.getElementById('result').innerHTML = `${yonks} Yonki Di Donks is approximately ${realTime} minutes of your precious time!`;
+
+    updateProgressBar();
+    displayRandomFacts();
+    triggerRandomEffects();
+}
+
+function updateProgressBar() {
+    conversionCount++;
+    const progressBar = document.getElementById('progress-bar');
+    const progress = (conversionCount / maxConversions) * 100;
+    progressBar.style.width = progress + '%';
+
+    // Update the gradient position to reflect progress
+    const gradientPosition = 100 - progress; // Calculate the position for the gradient
+    progressBar.style.backgroundPosition = `${gradientPosition}% center`;
+
+    if (conversionCount >= maxConversions) {
+        triggerShakeEffect();
+        resetProgress();
+    }
+}
+
+function triggerShakeEffect() {
+    document.body.classList.add('shake');
+}
+
+function resetProgress() {
+    conversionCount = 0;
+    document.getElementById('progress-bar').style.width = '0%';
+    document.getElementById('progress-bar').style.backgroundPosition = 'left center'; // Reset gradient position
 }
