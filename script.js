@@ -201,11 +201,29 @@ function updateProgressBar() {
 }
 
 function triggerShakeEffect() {
-    document.body.classList.add('shake');
+   document.body.classList.add('shake');
+   releaseGifsTwo();
+    
+    
 }
 
 function resetProgress() {
     conversionCount = 0;
     document.getElementById('progress-bar').style.width = '0%';
     document.getElementById('progress-bar').style.backgroundPosition = 'left center'; // Reset gradient position
+}
+
+
+function releaseGifsTwo() {
+    const gifContainer = document.getElementById('gif-containertwo');
+    gifContainer.innerHTML = '';
+
+    for (let i = 0; i < 200; i++) {
+        const gif = document.createElement('div');
+        gif.className = 'flying-giftwo';
+        gif.style.top = Math.random() * 100 + 'vh';
+        gif.style.left = Math.random() * 100 + 'vw';
+        gif.style.animationDuration = 2 + Math.random() * 2 + 's';
+        gifContainer.appendChild(gif);
+    }
 }
