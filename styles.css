@@ -484,3 +484,55 @@ p {
 body {
     min-height: 100vh;
 }
+
+#fire-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9;
+    display: none;
+}
+
+.fire {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 30px;
+    background: linear-gradient(to top, orange, yellow, red);
+    opacity: 0.8;
+    transform-origin: bottom;
+    animation: flicker 0.1s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { transform: scaleY(1) rotate(0deg); }
+    100% { transform: scaleY(1.5) rotate(-5deg); }
+}
+
+#siren-lights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    display: none;
+}
+
+.siren-flash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    opacity: 0.5;
+    animation: siren 0.5s infinite alternate;
+}
+
+@keyframes siren {
+    0% { background: red; }
+    100% { background: blue; }
+}

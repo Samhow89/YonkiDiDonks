@@ -203,7 +203,9 @@ function updateProgressBar() {
 function triggerShakeEffect() {
    document.body.classList.add('shake');
    releaseGifsTwo();
-    
+   startFireEffect();
+   startSirenEffect();
+  
     
 }
 
@@ -226,4 +228,41 @@ function releaseGifsTwo() {
         gif.style.animationDuration = 2 + Math.random() * 2 + 's';
         gifContainer.appendChild(gif);
     }
+}
+
+
+
+function startFireEffect() {
+    const fireContainer = document.getElementById('fire-container');
+    fireContainer.innerHTML = '';
+
+    for (let i = 0; i < 100; i++) {
+        const fire = document.createElement('div');
+        fire.className = 'fire';
+        fire.style.left = Math.random() * 100 + 'vw';
+        fire.style.animationDuration = 0.5 + Math.random() * 0.5 + 's';
+        fireContainer.appendChild(fire);
+    }
+
+    fireContainer.style.display = 'block';
+
+    setTimeout(() => {
+        fireContainer.innerHTML = '';
+        fireContainer.style.display = 'none';
+    }, 20000); // Fire lasts for 10 seconds
+}
+
+function startSirenEffect() {
+    const sirenLights = document.getElementById('siren-lights');
+    const sirenAudio = document.getElementById('siren-audio');
+
+    sirenLights.innerHTML = '<div class="siren-flash"></div>';
+    sirenLights.style.display = 'block';
+    sirenAudio.play();
+
+    setTimeout(() => {
+        sirenLights.style.display = 'none';
+        sirenAudio.pause();
+        sirenAudio.currentTime = 0;
+    }, 20000); // Siren lasts for 10 seconds
 }
