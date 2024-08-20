@@ -14,15 +14,53 @@ function convertYonks() {
 
 function displayRandomFacts() {
     const facts = [
-        "Did you know? The Yonk-iverse is expanding!",
-        "Fun Fact: Yonki Di Donks are the preferred currency on Planet Zog!",
-        "Breaking News: Yonki Di Donks have surpassed Bitcoin in value!",
-        "Whoa! You've just entered the Yonki Di Donks Hall of Fame!",
-        "Hold on tight! Yonki Di Donks are going galactic!"
+        "🌌 Did you know? Yonki Di Donks are the secret currency used to bribe intergalactic squirrels for star maps!",
+        "🚀 Fun Fact: The Yonki Di Donks Galactic Congress meets every Thursday to discuss the best donut flavors!",
+        "🎩 Breaking News: Yonki Di Donks were originally invented by wizards who needed a magical way to buy invisible ink!",
+        "👽 Whoa! You've just unlocked the Yonki Di Donks Time Capsule, which contains the lost recipe for the perfect space pizza!",
+        "🎉 Hold on tight! Yonki Di Donks have been discovered to power the world's fastest roller coasters on the Moon!",
+        "🍕 Legend says that Yonki Di Donks are the only thing that can make pizza teleport directly to your mouth!",
+        "🌠 Breaking News: A Yonki Di Donk was recently spotted in a nebula, where it was reportedly leading a conga line with aliens!",
+        "💃 Did you know? Yonki Di Donks are the preferred payment method for dance lessons taught by Martian disco stars!",
+        "🛸 Fun Fact: The Yonki Di Donks' official mascot is a dancing llama who has his own theme song on Pluto!",
+        "🚀 Rumor has it that Yonki Di Donks are used as fuel for spaceships piloted by intergalactic circus performers!",
+        "🎩 Breaking News: Yonki Di Donks have been found to be the only thing that can calm a stampeding herd of cosmic cows!",
+        "🍕 Hold on tight! Yonki Di Donks are the secret ingredient in the most delicious galactic nachos you've never tasted!",
+        "🌌 Did you know? Yonki Di Donks are rumored to be the secret ingredient in Martian ice cream that never melts!",
+        "🛸 Fun Fact: Yonki Di Donks were once used as currency in a parallel universe where everyone is a talking potato!",
+        "💃 Whoa! Yonki Di Donks have been scientifically proven to make you dance like a robot with a caffeine rush!",
+        "🚀 Breaking News: The Yonki Di Donks Space Agency is developing a new rocket powered solely by laughter and glitter!",
+        "🌠 Did you know? Yonki Di Donks can only be found in the pockets of interdimensional trousers worn by time-traveling penguins!",
+        "🎉 Hold on tight! Yonki Di Donks are the primary source of energy for the Galactic Karaoke Championship held on Mars!",
+        "🍕 Fun Fact: Yonki Di Donks are the official currency used to bribe the Galactic Judge of the Great Interstellar Food Fight!",
+        "🚀 Did you know? Yonki Di Donks are known to have magical properties that can turn mundane objects into floating marshmallows!",
+        "🎩 Breaking News: Yonki Di Donks are rumored to have been used to pay off ancient space pirates who were obsessed with disco balls!",
+        "🌌 Hold on tight! Yonki Di Donks have been spotted in a parallel universe where unicorns are the ruling class!",
+        "🛸 Fun Fact: Yonki Di Donks were recently found to be the secret ingredient in a potion that grants you the power to talk to squirrels!",
+        "💃 Whoa! Yonki Di Donks are said to be the favorite snack of friendly extraterrestrial beings who love to breakdance!",
+        "🚀 Did you know? Yonki Di Donks are the only thing that can power a spaceship capable of reaching the edge of the universe before lunch!",
+        "🌠 Fun Fact: The Yonki Di Donks Galactic Olympics includes events like zero-gravity hopscotch and cosmic limbo!",
+        "🍕 Breaking News: Yonki Di Donks have been discovered to be the only food that can make a black hole taste like chocolate!",
+        "🎉 Hold on tight! Yonki Di Donks are the only things that can make a meteor shower look like a dazzling fireworks display!",
+        "🎩 Did you know? Yonki Di Donks were once used to fund the construction of a giant rubber duck floating in Saturn's rings!",
+        "🛸 Fun Fact: Yonki Di Donks are the universal payment for a concert featuring the most famous alien rock band, The Cosmic Crustaceans!",
+        "💃 Breaking News: Yonki Di Donks are known to be the only cure for a case of the space hiccups that affect time-traveling acrobats!",
+        "🚀 Hold on tight! Yonki Di Donks have been discovered to have magical properties that turn ordinary objects into bouncing jellybeans!",
+        "🌌 Did you know? Yonki Di Donks are the only currency accepted in the intergalactic market for inflatable space suits!",
+        "🍕 Fun Fact: Yonki Di Donks are said to be the only thing that can turn a boring day into an epic adventure across the galaxy!",
+        "🎉 Breaking News: Yonki Di Donks are the secret ingredient in a recipe that makes your dreams come true while you sleep on the Moon!",
+        "🎩 Hold on tight! Yonki Di Donks are known to make space-time rifts close with a sparkle and a loud whoosh!",
+        "🛸 Did you know? Yonki Di Donks are the official prize for winning the annual Galactic Cheese Rolling Championship!",
+        "💃 Fun Fact: Yonki Di Donks are the only thing that can make a robotic vacuum cleaner break out into spontaneous dance routines!",
+        "🚀 Whoa! Yonki Di Donks have been discovered to be the only food that can make a wormhole taste like a gourmet pizza!",
+        "🌠 Breaking News: Yonki Di Donks are the preferred payment for magical potions that turn your laughter into sparkling stardust!",
+        "🍕 Hold on tight! Yonki Di Donks are the secret ingredient in a cosmic cake that makes you float like a feather in zero gravity!"
     ];
+
     const randomFact = facts[Math.floor(Math.random() * facts.length)];
     document.getElementById('funFact').innerHTML = randomFact;
 }
+
 
 function triggerRandomEffects() {
     rainYonksAndDonks();
